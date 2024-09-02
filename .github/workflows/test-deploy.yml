@@ -1,6 +1,6 @@
 name: test and deploy
 on: push
-jobs: t
+jobs:
   test:
    runs-on: ubuntu-latest
     steps:
@@ -12,7 +12,7 @@ jobs: t
        run: npm ci
       -name: run unit testing
        run: npm run test
-  deploy
+  deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
