@@ -4,25 +4,25 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-           node-version: '18'
-      -name: install dependencies
+     - uses: actions/checkout@v4
+     - uses: actions/setup-node@v4
+       with:
+        node-version: '18'
+     - name: install dependencies
        run: npm ci
-      -name: run unit testing
+     - name: run unit testing
        run: npm run test
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-           node-version: '18'
-      -name: install dependencies
+     - uses: actions/checkout@v4
+     - uses: actions/setup-node@v4
+       with:
+        node-version: '18'
+     - name: install dependencies
        run: npm ci
-      -name: deploy Rest Api 
+     - name: deploy Rest Api 
        run: echo 'deployement...' 
 
       
